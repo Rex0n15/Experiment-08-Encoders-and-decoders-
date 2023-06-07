@@ -56,23 +56,28 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
-
-
-
-### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
+Developed by: REXON.J.P
+RegisterNumber: 212222050048
+```
+### PROGRAM ENCODER
+```
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
 
 
 
 
 ### RTL LOGIC  
 
+![WhatsApp Image 2023-06-07 at 14 11 33](https://github.com/Rex0n15/Experiment-08-Encoders-and-decoders-/assets/130550796/10849967-58de-42f5-b4a7-73acefb027dd)
 
 
 
@@ -82,15 +87,57 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+![WhatsApp Image 2023-06-07 at 14 11 33](https://github.com/Rex0n15/Experiment-08-Encoders-and-decoders-/assets/130550796/e578f242-653b-443e-a7a1-23488b36dfe5)
 
 
 
 
 ### TRUTH TABLE 
+![WhatsApp Image 2023-06-07 at 14 35 51](https://github.com/Rex0n15/Experiment-08-Encoders-and-decoders-/assets/130550796/c81af9b9-7407-4b2b-a52e-fcd6a17ba665)
 
 
 
 
 
 
-### RESULTS 
+
+### PROGRAM DECODER
+```
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a&~b&~c);
+assign d1=(~a&~b&c);
+assign d2=(~a&b&~c);
+assign d3=(~a&b&c);
+assign d4=(a&~b&~c);
+assign d5=(a&~b&c);
+assign d6=(a&b&~c);
+assign d7=(a&b&c);
+endmodule
+
+```
+
+
+
+
+### RTL LOGIC 
+
+
+![WhatsApp Image 2023-06-07 at 14 22 15](https://github.com/Rex0n15/Experiment-08-Encoders-and-decoders-/assets/130550796/e7c66e69-cae0-47df-9f61-61db728a5953)
+
+
+
+### TIMING DIGRAMS  
+
+![WhatsApp Image 2023-06-07 at 14 27 37](https://github.com/Rex0n15/Experiment-08-Encoders-and-decoders-/assets/130550796/505393d8-d8c2-4402-92c9-72f9fefb2dc8)
+
+
+### TRUTH TABLE 
+
+![WhatsApp Image 2023-06-07 at 14 35 59](https://github.com/Rex0n15/Experiment-08-Encoders-and-decoders-/assets/130550796/8e41483a-b29a-4238-aef8-795453021601)
+
+
+### RESULT
+
+encoders and decoders are verified
